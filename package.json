@@ -6182,7 +6182,17 @@
 				"icon": "$(sparkle)"
 			},
 			{
+				"command": "gitlens.ai.aiRebaseBranch:views",
+				"title": "AI Recompose Branch Commits (Preview)",
+				"icon": "$(sparkle)"
+			},
+			{
 				"command": "gitlens.ai.aiRebaseUnpushed:graph",
+				"title": "AI Recompose Unpushed Commits (Preview)",
+				"icon": "$(sparkle)"
+			},
+			{
+				"command": "gitlens.ai.aiRebaseUnpushed:views",
 				"title": "AI Recompose Unpushed Commits (Preview)",
 				"icon": "$(sparkle)"
 			},
@@ -6233,6 +6243,11 @@
 			},
 			{
 				"command": "gitlens.ai.explainUnpushed:graph",
+				"title": "Explain Unpushed Changes (Preview)",
+				"icon": "$(sparkle)"
+			},
+			{
+				"command": "gitlens.ai.explainUnpushed:views",
 				"title": "Explain Unpushed Changes (Preview)",
 				"icon": "$(sparkle)"
 			},
@@ -10979,7 +10994,15 @@
 					"when": "false"
 				},
 				{
+					"command": "gitlens.ai.aiRebaseBranch:views",
+					"when": "false"
+				},
+				{
 					"command": "gitlens.ai.aiRebaseUnpushed:graph",
+					"when": "false"
+				},
+				{
+					"command": "gitlens.ai.aiRebaseUnpushed:views",
 					"when": "false"
 				},
 				{
@@ -11020,6 +11043,10 @@
 				},
 				{
 					"command": "gitlens.ai.explainUnpushed:graph",
+					"when": "false"
+				},
+				{
+					"command": "gitlens.ai.explainUnpushed:views",
 					"when": "false"
 				},
 				{
@@ -17351,6 +17378,16 @@
 					"group": "1_gitlens_actions@3"
 				},
 				{
+					"command": "gitlens.ai.aiRebaseBranch:views",
+					"when": "viewItem =~ /gitlens:branch\\b(?=.*?\\b\\+recomposable\\b)/ && !listMultiSelection && !gitlens:readonly && !gitlens:untrusted && gitlens:gk:organization:ai:enabled",
+					"group": "1_gitlens_actions@6"
+				},
+				{
+					"command": "gitlens.ai.aiRebaseUnpushed:views",
+					"when": "viewItem =~ /gitlens:branch\\b(?=.*?\\b\\+ahead\\b)/ && !listMultiSelection && !gitlens:readonly && !gitlens:untrusted && gitlens:gk:organization:ai:enabled",
+					"group": "1_gitlens_actions@7"
+				},
+				{
 					"command": "gitlens.views.mergeBranchInto",
 					"when": "viewItem =~ /gitlens:branch\\b(?!.*?\\b\\+current\\b)(?!.*?\\b\\+closed\\b)/ && !listMultiSelection && !gitlens:readonly && !gitlens:untrusted && !gitlens:hasVirtualFolders",
 					"group": "1_gitlens_actions_1@1"
@@ -17439,6 +17476,11 @@
 					"command": "gitlens.views.openBranchOnRemote.multi",
 					"when": "viewItem =~ /gitlens:branch\\b(?=.*?\\b\\+(tracking|remote)\\b)/ && listMultiSelection",
 					"group": "2_gitlens_quickopen@1"
+				},
+				{
+					"command": "gitlens.ai.explainUnpushed:views",
+					"when": "viewItem =~ /gitlens:branch\\b(?=.*?\\b\\+ahead\\b)/ && !listMultiSelection && !gitlens:readonly && !gitlens:untrusted && gitlens:gk:organization:ai:enabled",
+					"group": "3_gitlens_ai@2"
 				},
 				{
 					"command": "gitlens.views.openChangedFileDiffsWithMergeBase",
